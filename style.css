@@ -53,9 +53,9 @@ section {
 }
 
 .education-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    gap: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 }
 
 .education-card {
@@ -65,6 +65,7 @@ section {
     padding-top: 1px;
     padding-bottom: 1px;
     margin-bottom: 1rem;
+    flex-direction: row;
 }
 
 .education-card:hover {
