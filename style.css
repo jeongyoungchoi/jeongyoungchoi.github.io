@@ -104,11 +104,31 @@ footer .socials img {
     padding-top: 1px;
     padding-bottom: 1px;
     margin-bottom: 1rem;
-    flex-direction: row;
+    display: flex;          
+    flex-direction: column;
 }
 
 .education-card:hover {
     background: #215CAF;
+}
+
+.education-card-main {
+    display: flex;          /* side-by-side layout */
+    flex-direction: row;
+}
+
+.education-card-main img {
+    width: 80px;
+    height: 80px;
+    padding: 1rem;
+    vertical-align: middle;
+    align-self: center;
+}
+
+.education-card-details {
+    display: flex;          /* side-by-side layout */
+    flex-direction: column;
+    padding-left: 1rem;
 }
 
 /* Publications */
