@@ -52,7 +52,13 @@ section {
     border-radius: 8px;
 }
 
-.education {
+.education-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 1.5rem;
+}
+
+.education-card {
     border-left: 4px solid #215CAF;
     background: #222;
     padding-left: 10px;
@@ -61,7 +67,7 @@ section {
     margin-bottom: 1rem;
 }
 
-.education:hover {
+.education-card:hover {
     background: #215CAF;
 }
 
