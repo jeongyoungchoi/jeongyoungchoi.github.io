@@ -10,25 +10,6 @@ h3 {
     font-weight: normal;
 }
 
-body{
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding-left: 50px;
-    padding-right: 50px;
-    padding-top: 1px;
-    padding-bottom: 1px;
-    line-height: 1.6;
-    background-color: black;
-    color: white;
-}
-
-header {
-    background: black;
-    color: white;
-    padding: 1rem;
-    text-align: center;
-}
-
 a:link {
     text-decoration: none;
     color: white; /* unvisited link color */
@@ -43,6 +24,25 @@ a:active {
     color: gray; /* color when mouse hovers over link */
 }
 
+header {
+    background: black;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+body{
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    line-height: 1.6;
+    background-color: black;
+    color: white;
+}
+
 section {
     max-width: 800px;
     margin: auto;
@@ -50,6 +50,45 @@ section {
     background: white;
     margin-bottom: 1rem;
     border-radius: 8px;
+}
+
+footer{
+    text-align: center;
+    padding: 1rem;
+    background: black;
+    color: white;
+}
+
+footer .socials-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+footer .socials {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+footer .socials img {
+    width: 1.5em;
+    height: 1.5em;
+    vertical-align: middle;
+}
+
+.about-container {
+    display: flex;          /* side-by-side layout */
+    align-items: center;    /* vertical alignment */
+    gap: 15px;              /* space between image and text */
+}
+
+.profile-pic {
+    width: 150px;
+    height: auto;
+    border-radius: 10px;
 }
 
 .education-container {
@@ -70,53 +109,6 @@ section {
 
 .education-card:hover {
     background: #215CAF;
-}
-
-.about-container {
-    display: flex;          /* side-by-side layout */
-    align-items: center;    /* vertical alignment */
-    gap: 15px;              /* space between image and text */
-}
-
-.profile-pic {
-    width: 150px;
-    height: auto;
-    border-radius: 10px;
-}
-
-footer{
-    text-align: center;
-    padding: 1rem;
-    background: black;
-    color: white;
-}
-
-footer .socials {
-  margin-bottom: 0.5rem;
-  font-size: 1rem;
-  color: white;
-}
-
-footer .socials a {
-  color: white;
-  text-decoration: none;
-  margin: 0 0.5rem;
-  font-weight: bold;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.3em; /* space between icon and text */
-}
-
-footer .socials a:hover,
-footer .socials a:focus {
-  text-decoration: underline;
-  color: #4a90e2; /* highlight color */
-}
-
-footer .socials svg {
-  width: 1.2em;
-  height: 1.2em;
-  vertical-align: middle;
 }
 
 /* Publications */
