@@ -2,6 +2,28 @@ html {
     scrollbar-gutter: stable;
 }
 
+/* Default to dark mode */
+:root {
+    --background: black;
+    --foreground: white;
+    --accent: #215CAF;
+    --card-bg: #222;
+    --card-hover: #215CAF;
+    --text-main: white;
+    --shadow: rgba(255, 255, 255, 0.2);
+}
+
+/* Light mode overrides */
+.light-mode {
+    --background: white;
+    --foreground: black;
+    --accent: #215CAF;
+    --card-bg: #f9f9f9;
+    --card-hover: #e8eaf6;
+    --text-main: black;
+    --shadow: rgba(0, 0, 0, 0.2);
+}
+
 h1 { 
     font-weight: normal;
 }
@@ -16,11 +38,11 @@ h3 {
 
 a:link {
     text-decoration: none;
-    color: white; /* unvisited link color */
+    color: var(--text-main); /* unvisited link color */
 }
 a:visited {
     text-decoration: none;
-    color: white; /* visited (clicked) link color, use your preferred color */
+    color: var(--text-main); /* visited (clicked) link color, use your preferred color */
 }
 a:hover,
 a:active {
@@ -29,8 +51,8 @@ a:active {
 }
 
 header {
-    background: black;
-    color: white;
+    background: var(--background);
+    color: var(--foreground);
     padding: 1rem;
     text-align: center;
     position: sticky;
@@ -46,8 +68,8 @@ body{
     padding-top: 1px;
     padding-bottom: 1px;
     line-height: 1.6;
-    background-color: black;
-    color: white;
+    color: var(--text-main);
+    background-color: var(--background);
     overflow-y: scroll;
 }
 
@@ -63,8 +85,8 @@ section {
 footer{
     text-align: center;
     padding: 1rem;
-    background: black;
-    color: white;
+    background: var(--background);
+    color: var(--text-main);
 }
 
 footer .socials-container {
@@ -107,7 +129,7 @@ footer .socials img {
 
 .education-card {
     border-left: 4px solid #215CAF;
-    background: #222;
+    background: var(--card-bg);
     padding-left: 10px;
     padding-top: 1px;
     padding-bottom: 1px;
@@ -116,7 +138,7 @@ footer .socials img {
 }
 
 .education-card:hover {
-    background: #215CAF;
+    background: var(--card-hover);
 }
 
 .education-card-main {
@@ -154,15 +176,15 @@ footer .socials img {
 
 .publication-card {
     border-radius: 8px;
-    background: #111;
+    background: var(--card-bg);
     overflow: hidden;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 5px var(--shadow);
     display: flex;
     /* flex-direction: column; */
 }
 
 .publication-card:hover {
-    background: #215CAF;
+    background: var(--card-hover);
 }
 
 .publication-card img {
@@ -211,9 +233,9 @@ footer .socials img {
 .contact-card {
     padding: 1rem;
     border-radius: 8px;
-    background: #111;
+    background: var(--card-bg);
     overflow: hidden;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
     display: flex;
     flex-direction: row;
 }
