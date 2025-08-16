@@ -109,6 +109,52 @@ footer .socials img {
     vertical-align: middle;
 }
 
+.lang-dropdown {
+    position: relative;
+    display: inline-block;
+    margin-left: 1rem;
+}
+
+.lang-dropbtn {
+    background: var(--background, #222);
+    color: var(--foreground, #fff);
+    border: none;
+    padding: 0.5em 1em;
+    cursor: pointer;
+    font-size: 1em;
+    border-radius: 3px;
+}
+
+.lang-dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--background, #222);
+    min-width: 120px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    z-index: 9999;
+    right: 0;
+}
+
+.lang-dropdown-content a {
+    color: var(--foreground, #fff);
+    padding: 0.5em 1em;
+    text-decoration: none;
+    display: block;
+    font-size: 1em;
+}
+
+.lang-dropdown-content a:hover {
+    background-color: var(--card-hover, #333);
+}
+
+.lang-dropdown:hover .lang-dropdown-content {
+    display: block;
+}
+
+.lang-dropdown:focus-within .lang-dropdown-content {
+    display: block;
+}
+
 .about-container {
     display: flex;          /* side-by-side layout */
     align-items: center;    /* vertical alignment */

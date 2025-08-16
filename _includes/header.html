@@ -1,10 +1,32 @@
 <header>
+    <nav>
+    <!-- Your main nav links here -->
+
+    <div class="lang-dropdown">
+        <button class="lang-dropbtn">🌐 Language ▼</button>
+            <div class="lang-dropdown-content">
+                {%- capture subpage -%}
+                    {{- page.url | remove_first: '/en' | remove_first: '/kr' -}}
+                {%- endcapture -%}
+                <a href="/en{{ subpage }}">English</a>
+                <a href="/kr{{ subpage }}">한국어</a>
+                <!-- Add more <a> for other languages as needed -->
+            </div>
+        </div>
+    </nav>
     <h1>Jeong Young Choi</h1>
     <nav>
-        <a href="index.html">Home</a> | 
-        <a href="about.html">About</a> | 
-        <a href="publications.html">Publications</a> | 
-        <a href="contact.html">Contact</a>
+        {% if page.lang == "en" %}
+            <a href="/en/index.html">Home</a> | 
+            <a href="/en/about.html">About</a> | 
+            <a href="/en/publications.html">Publications</a> | 
+            <a href="/en/contact.html">Contact</a>
+        {% elsif page.lang == "kr" %}
+            <a href="/kr/index.html">홈</a> | 
+            <a href="/kr/about.html">소개</a> | 
+            <a href="/kr/publications.html">논문</a> | 
+            <a href="/kr/contact.html">연락처</a>
+        {% endif %}
     </nav>
     <button id="mode-toggle">Switch Mode</button>
 </header>
