@@ -63,8 +63,8 @@ header {
 body{
     font-family: Arial, sans-serif;
     margin: 0;
-    padding-left: 50px;
-    padding-right: 50px;
+    padding-left: 2em;
+    padding-right: 2em;
     padding-top: 1px;
     padding-bottom: 1px;
     line-height: 1.6;
@@ -110,16 +110,20 @@ footer .socials img {
 }
 
 .lang-dropdown {
-    position: relative;
-    display: inline-block;
-    margin-left: 1rem;
+    position: absolute;        /* Changed from relative for top-right placement */
+    top: 0;
+    right: 0;
+    margin-left: 0;
+    width: 120px;               /* Much narrower, adjust as needed */
+    z-index: 2000;             /* Ensure above other elements */
 }
 
 .lang-dropbtn {
     background: var(--background, #222);
     color: var(--foreground, #fff);
     border: none;
-    padding: 0.5em 1em;
+    width: 100%;
+    padding: 0.4em 0.5em;      /* Smaller padding */
     cursor: pointer;
     font-size: 1em;
     border-radius: 3px;
@@ -129,7 +133,8 @@ footer .socials img {
     display: none;
     position: absolute;
     background-color: var(--background, #222);
-    min-width: 120px;
+    min-width: 120px;           /* Matches dropdown width */
+    font-size: 0.95em;
     box-shadow: 0 2px 8px rgba(0,0,0,0.2);
     z-index: 9999;
     right: 0;
@@ -137,7 +142,7 @@ footer .socials img {
 
 .lang-dropdown-content a {
     color: var(--foreground, #fff);
-    padding: 0.5em 1em;
+    padding: 0.1em 0.1em;
     text-decoration: none;
     display: block;
     font-size: 1em;
