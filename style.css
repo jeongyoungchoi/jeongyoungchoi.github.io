@@ -343,14 +343,14 @@ footer .socials img {
 }
 
 .contact-card img {
-    width: 200px;
+    width: 175px;
     height: fit-content;
     align-self: center;
     border-radius: 10px;
 }
 
 .contact-content {
-    padding: 2rem;
+    padding: 1.5rem;
     flex-grow: 1;
     display: flex;
     flex-direction: column;
@@ -359,5 +359,6 @@ footer .socials img {
 
 .contact-content p {
     flex-grow: 1;
-    margin-bottom: 1rem;
+    margin-block-start: 0.5em;
+    margin-block-end: 0.5em;
 }
