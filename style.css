@@ -398,6 +398,11 @@ footer .socials img {
     .about-container {
         flex-direction: column;
     }
+    .education-card-main-logo,
+    .experience-card-main-logo {
+        width: 60px;
+        height: 60px;
+    }
     .publication-card img {
         display: none;
     }
