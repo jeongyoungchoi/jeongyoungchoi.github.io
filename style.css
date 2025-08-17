@@ -24,6 +24,16 @@ html {
     --shadow: rgba(0, 0, 0, 0.2);
 }
 
+.dark-mode {
+    --background: black;
+    --foreground: white;
+    --accent: #215CAF;
+    --card-bg: #222;
+    --card-hover: #215CAF;
+    --text-main: white;
+    --shadow: rgba(255, 255, 255, 0.2);
+}
+
 h1 { 
     font-weight: normal;
 }
@@ -58,6 +68,23 @@ header {
     position: sticky;
     top: 0;
     z-index: 1000; /* ensures it stays above other content */
+}
+
+.header-controls {
+    display: flex;
+    align-items: flex-end;
+    gap: 0.5rem;
+    position: absolute;
+    top: 0rem;
+    right: 0rem;
+}
+
+#mode-toggle {
+    border: none;
+    background: transparent;
+    font-size: 1rem;
+    cursor: pointer;
+    /* line-height: 1; */
 }
 
 body{
@@ -110,10 +137,6 @@ footer .socials img {
 }
 
 .lang-dropdown {
-    position: absolute;        /* Changed from relative for top-right placement */
-    top: 0;
-    right: 0;
-    margin-left: 0;
     width: 120px;               /* Much narrower, adjust as needed */
     z-index: 2000;             /* Ensure above other elements */
 }
@@ -123,7 +146,7 @@ footer .socials img {
     color: var(--foreground, #fff);
     border: none;
     width: 100%;
-    padding: 0.4em 0.5em;      /* Smaller padding */
+    /* padding: 0.4em 0.5em;      Smaller padding */
     cursor: pointer;
     font-size: 1em;
     border-radius: 3px;
@@ -137,7 +160,7 @@ footer .socials img {
     font-size: 0.95em;
     box-shadow: 0 2px 8px rgba(0,0,0,0.2);
     z-index: 9999;
-    right: 0;
+    /* right: 0; */
 }
 
 .lang-dropdown-content a {
