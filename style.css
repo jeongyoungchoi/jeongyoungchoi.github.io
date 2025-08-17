@@ -370,7 +370,7 @@ footer .socials img {
 .contact-card img {
     margin-right: 1.5rem;
     max-width: 175px;
-    height: fit-content;
+    height: auto;
     align-self: center;
     border-radius: 10px;
 }
