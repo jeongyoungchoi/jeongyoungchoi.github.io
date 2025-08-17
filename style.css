@@ -280,7 +280,7 @@ footer .socials img {
 /* Publications */
 .publications-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    /* grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); */
     gap: 1.5rem;
 }
 
@@ -290,6 +290,7 @@ footer .socials img {
     overflow: hidden;
     box-shadow: 0 2px 5px var(--shadow);
     display: flex;
+    /* grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); */
     /* flex-direction: column; */
 }
 
@@ -298,10 +299,14 @@ footer .socials img {
 }
 
 .publication-card img {
+    /* max-width: 100%; */
+    height: auto;
+    display: block;  /* Removes inline spacing and makes images behave predictably in flex/grid */
     margin: 10px;
     background: white;
-    width: 350px;
-    height: fit-content;
+    max-width: 350px;
+    min-width: 300px;
+    width: 100%;
     object-fit: cover;
     border-radius: 4px;
     align-self: center;
@@ -369,4 +374,10 @@ footer .socials img {
     flex-grow: 1;
     margin-block-start: 0.5em;
     margin-block-end: 0.5em;
+}
+
+@media (max-width: 600px) {
+    .publication-card img {
+        display: none;
+    }
 }
