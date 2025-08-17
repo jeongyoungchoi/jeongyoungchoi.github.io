@@ -396,14 +396,15 @@ footer .socials img {
     .publication-card img {
         display: none;
     }
+    .contact-card:hover {
+        transform: scale(1.01);
+    }
     .contact-card img {
+        margin-right: 0.1rem;
         max-width: 100px;
     }
     .contact-content {
+        margin-right: 0.1rem;
         padding: 0.1rem;
-        /* flex-grow: 1;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between; */
     }
 }
