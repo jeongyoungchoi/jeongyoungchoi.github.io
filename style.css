@@ -342,11 +342,18 @@ footer .socials img {
 /* Contact */
 .contacts-container {
     display: flex;          /* side-by-side layout */
-    flex-wrap: wrap;       /* allow wrapping to next line */
+    flex-direction: row;
+    flex-wrap: wrap;        /* Allow multi-line if needed */
+    justify-content: center; /* Center all cards horizontally */
+    align-items: center;     /* Center cards vertically if multi-row */
+    width: 100%;              /* Ensure the container uses full width */
     gap: 1.5rem;
 }
 
 .contact-card {
+    margin: 0 auto;
+    max-width: 550px;
+    align-items: center;
     padding: 1rem;
     border-radius: 8px;
     background: var(--card-bg);
@@ -356,7 +363,12 @@ footer .socials img {
     flex-direction: row;
 }
 
+.contact-card:hover {
+    transform: scale(1.02);
+}
+
 .contact-card img {
+    margin-right: 1.5rem;
     max-width: 175px;
     height: fit-content;
     align-self: center;
