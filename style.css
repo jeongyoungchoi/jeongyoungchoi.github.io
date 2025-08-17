@@ -356,7 +356,7 @@ footer .socials img {
 }
 
 .contact-card img {
-    width: 175px;
+    max-width: 175px;
     height: fit-content;
     align-self: center;
     border-radius: 10px;
@@ -379,5 +379,11 @@ footer .socials img {
 @media (max-width: 600px) {
     .publication-card img {
         display: none;
+    }
+    .contact-card img {
+        max-width: 150px;
+        height: fit-content;
+        align-self: center;
+        border-radius: 10px;
     }
 }
