@@ -121,8 +121,8 @@ nav a:hover {
 body{
     font-family: Arial, sans-serif;
     margin: 0;
-    padding-left: 100px;
-    padding-right: 100px;
+    padding-left: 5%;
+    padding-right: 5%;
     padding-top: 1px;
     padding-bottom: 1px;
     line-height: 1.6;
