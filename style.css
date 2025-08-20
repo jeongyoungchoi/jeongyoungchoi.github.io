@@ -10,6 +10,7 @@ html {
     --card-bg: #222;
     --card-hover: #08407E;
     --text-main: white;
+    --text-sub: gray;
     --shadow: rgba(255, 255, 255, 0.2);
 }
 
@@ -21,6 +22,7 @@ html {
     --card-bg: #f9f9f9;
     --card-hover: #D3DEEF;
     --text-main: black;
+    --text-sub: gray;
     --shadow: rgba(0, 0, 0, 0.2);
 }
 
@@ -31,6 +33,7 @@ html {
     --card-bg: #222;
     --card-hover: #08407E;
     --text-main: white;
+    --text-sub: gray;
     --shadow: rgba(255, 255, 255, 0.2);
 }
 
@@ -314,6 +317,7 @@ footer .socials img {
     object-fit: cover;
     border-radius: 4px;
     align-self: center;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
 }
 
 .publication-content {
@@ -350,16 +354,18 @@ footer .socials img {
     width: 100%;              /* Ensure the container uses full width */
     gap: 0.8rem;
 }
+
 .publication-tag{
     background: #215CAF;
     color: white;
     /* border: 2px solid var(--tag-border); */
     width: fit-content;
-    padding: 0.2rem 0.8rem;
+    padding: 0.3rem 0.9rem;
     text-align: center;
     font-weight: bold;
     font-size: 0.9rem;
     border-radius: 2rem;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
 }
 
 /* Contact */
