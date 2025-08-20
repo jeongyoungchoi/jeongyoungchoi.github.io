@@ -1,0 +1,15 @@
+[
+    {
+        "index": 1,
+        "title": "A Machine Learning Enhanced MEMS Thermal Anemometer for Detection of Flow, Angle of Attack, and Relative Humidity",
+        "authors": ["Thomas Leigh Hackett", "Jeong Young Choi", "Remco Sanders", "Tomas van den Berg", "Dennis Alveringh", "Jurriaan Schmitz"],
+        "year": 2024,
+        "type": "Journal",
+        "journal": "IEEE Sensors Letters",
+        "volume": 8,
+        "number": 7,
+        "pages": "1--4",
+        "keywords": ["ML"],
+        "url": "https://doi.org/10.1109/LSENS.2024.3418193"
+    }
+]
