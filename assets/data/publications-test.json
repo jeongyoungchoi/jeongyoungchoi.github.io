@@ -6,9 +6,10 @@
         "year": 2024,
         "type": "Journal",
         "journal": "IEEE Sensors Letters",
+        "publisher": "IEEE",
         "volume": 8,
         "number": 7,
-        "pages": "1--4",
+        "pages": "1-4",
         "keywords": ["ML"],
         "url": "https://doi.org/10.1109/LSENS.2024.3418193"
     },

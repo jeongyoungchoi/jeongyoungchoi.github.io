@@ -20,7 +20,7 @@ items.forEach(item => {
     <div class="publication-content">
     <h3 id="publication-title">${item.title}</h3>
     <p>${authorsHTML}</p>
-    <p>Published in <i>${item.journal}</i> (${item.year})</p>
+    <p><i>${item.journal}</i>, vol. ${item.volume}: no. ${item.number}, pp. ${item.pages}, ${item.publisher}, ${item.year}.</p>
     <div class="publication-tags-container">
         <div class="publication-tag">${item.type}</div>
         ${item.keywords.map(keyword => `<div class="publication-tag">${keyword}</div>`).join(' ')}

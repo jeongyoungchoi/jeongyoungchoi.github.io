@@ -8,7 +8,7 @@ html {
     --foreground: white;
     --accent: #215CAF;
     --card-bg: #222;
-    --card-hover: #215CAF;
+    --card-hover: #08407E;
     --text-main: white;
     --shadow: rgba(255, 255, 255, 0.2);
 }
@@ -19,7 +19,7 @@ html {
     --foreground: black;
     --accent: #215CAF;
     --card-bg: #f9f9f9;
-    --card-hover: #e8eaf6;
+    --card-hover: #D3DEEF;
     --text-main: black;
     --shadow: rgba(0, 0, 0, 0.2);
 }
@@ -29,7 +29,7 @@ html {
     --foreground: white;
     --accent: #215CAF;
     --card-bg: #222;
-    --card-hover: #215CAF;
+    --card-hover: #08407E;
     --text-main: white;
     --shadow: rgba(255, 255, 255, 0.2);
 }
@@ -326,7 +326,6 @@ footer .socials img {
 
 .publication-content p {
     flex-grow: 1;
-    margin-bottom: 1rem;
 }
 
 .publication-link {
@@ -349,18 +348,18 @@ footer .socials img {
     justify-content: left; /* Center all cards horizontally */
     align-items: center;     /* Center cards vertically if multi-row */
     width: 100%;              /* Ensure the container uses full width */
-    gap: 0.5rem;
+    gap: 0.8rem;
 }
 .publication-tag{
-    background: var(--card-bg);
-    color: var(--accent);
-    border: 1px solid var(--accent);
+    background: #215CAF;
+    color: white;
+    /* border: 2px solid var(--tag-border); */
     width: fit-content;
-    padding: 0.2rem 0.6rem;
+    padding: 0.2rem 0.8rem;
     text-align: center;
     font-weight: bold;
     font-size: 0.9rem;
-    border-radius: 1.5rem;
+    border-radius: 2rem;
 }
 
 /* Contact */
