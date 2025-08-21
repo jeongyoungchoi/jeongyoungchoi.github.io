@@ -18,7 +18,11 @@ items.forEach(item => {
     }).join(', ');
 
     // Create inner HTML structure with divs
-    itemLink.innerHTML = `<img src="/images/publication-${item.index}.png" alt="Publication ${item.index} Thumbnail">
+    itemLink.innerHTML = `
+    <div class="abstract-graphic">
+        <img src="/assets/data/research/images/publication-${item.index}.png" alt="Publication ${item.index} Thumbnail">
+        <div class="overlay">Read Paper</div>
+    </div>
     <div class="publication-content">
         <h3 id="publication-title">${item.title}</h3>
         <p>${authorsHTML}</p>
@@ -27,15 +31,14 @@ items.forEach(item => {
             <div class="publication-tag">${item.type}</div>
             ${item.keywords.map(keyword => `<div class="publication-tag">${keyword}</div>`).join(' ')}
         </div>
-    </div>
-    <div class="overlay">Read Paper</div>`;
+    </div>`;
     // Append this item div to the container
     container.appendChild(itemLink);
 });
 }
 
 // Example usage with fetch:
-fetch('/assets/data/publications.json')
+fetch('/assets/data/research/publications.json')
     .then(response => response.json())
     .then(data => {
     renderPublications(data);
