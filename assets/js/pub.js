@@ -4,8 +4,10 @@ container.innerHTML = ''; // Clear previous content
 
 items.forEach(item => {
     // Create the main item div
-    const itemDiv = document.createElement('div');
-    itemDiv.classList.add('publication-card'); // For CSS styling if needed
+    const itemLink = document.createElement('a');
+    itemLink.classList.add('publication-card'); // For CSS styling
+    itemLink.href = item.url;
+    itemLink.target = "_blank";
 
     const authorsHTML = item.authors.map(author => {
         if (author === "Jeong Young Choi") {
@@ -14,23 +16,21 @@ items.forEach(item => {
             return author;
         }
     }).join(', ');
+
     // Create inner HTML structure with divs
-    itemDiv.innerHTML = `
-    <img src="/images/publication-${item.index}.png" alt="Publication ${item.index} Thumbnail">
+    itemLink.innerHTML = `<img src="/images/publication-${item.index}.png" alt="Publication ${item.index} Thumbnail">
     <div class="publication-content">
-    <h3 id="publication-title">${item.title}</h3>
-    <p>${authorsHTML}</p>
-    <p><i>${item.journal}</i>, vol. ${item.volume}: no. ${item.number}, pp. ${item.pages}, ${item.publisher}, ${item.year}.</p>
-    <div class="publication-tags-container">
-        <div class="publication-tag">${item.type}</div>
-        ${item.keywords.map(keyword => `<div class="publication-tag">${keyword}</div>`).join(' ')}
+        <h3 id="publication-title">${item.title}</h3>
+        <p>${authorsHTML}</p>
+        <p><i>${item.journal}</i>, vol. ${item.volume}: no. ${item.number}, pp. ${item.pages}, ${item.publisher}, ${item.year}.</p>
+        <div class="publication-tags-container">
+            <div class="publication-tag">${item.type}</div>
+            ${item.keywords.map(keyword => `<div class="publication-tag">${keyword}</div>`).join(' ')}
+        </div>
     </div>
-    <div class="publication-link">
-        <a target="_blank" href="${item.url}">Read Paper</a>
-    </div>
-    </div>`;
+    <div class="overlay">Read Paper</div>`;
     // Append this item div to the container
-    container.appendChild(itemDiv);
+    container.appendChild(itemLink);
 });
 }
 
