@@ -460,6 +460,12 @@ footer .socials img {
     margin-block-end: 0.5em;
 }
 
+@media (max-width: 800px) {
+    .abstract-graphic {
+        display: none;
+    }
+}
+
 @media (max-width: 600px) {
     .about-container {
         flex-direction: column;
@@ -467,9 +473,6 @@ footer .socials img {
     .education-card-main-logo img,
     .experience-card-main-logo img {
         width: 60px;
-    }
-    .publication-card img {
-        display: none;
     }
     .contact-card:hover {
         transform: scale(1.01);
