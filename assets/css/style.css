@@ -1,0 +1,488 @@
+html {
+    scrollbar-gutter: stable;
+}
+
+/* Default to dark mode */
+:root {
+    --background: black;
+    --foreground: white;
+    --accent: #215CAF;
+    --card-bg: #222;
+    --card-hover: #08407E;
+    --text-main: white;
+    --text-sub: gray;
+    --shadow: rgba(255, 255, 255, 0.2);
+}
+
+/* Light mode overrides */
+.light-mode {
+    --background: white;
+    --foreground: black;
+    --accent: #215CAF;
+    --card-bg: #f9f9f9;
+    --card-hover: #D3DEEF;
+    --text-main: black;
+    --text-sub: gray;
+    --shadow: rgba(0, 0, 0, 0.2);
+}
+
+.dark-mode {
+    --background: black;
+    --foreground: white;
+    --accent: #215CAF;
+    --card-bg: #222;
+    --card-hover: #08407E;
+    --text-main: white;
+    --text-sub: gray;
+    --shadow: rgba(255, 255, 255, 0.2);
+}
+
+.light-icon { display: none; }
+.dark-icon { display: inline; }
+.light-mode .light-icon { display: inline; }
+.light-mode .dark-icon { display: none; }
+
+h1 { 
+    font-weight: normal;
+}
+
+h2 {
+    font-weight: normal;
+}
+
+h3 {
+    font-weight: normal;
+}
+
+a:link,
+a:visited,
+a:hover,
+a:active {
+    text-decoration: none;
+    color: var(--text-main);
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: var(--background);
+    color: var(--foreground);
+    padding: 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+}
+
+header h1 a {
+    width: fit-content;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+}
+
+.header-controls {
+    display: flex;
+    align-items: flex-end;
+    gap: 0.5rem;
+    position: absolute;
+    top: 0rem;
+    right: 0rem;
+}
+
+#mode-toggle {
+    border: none;
+    background: transparent;
+    font-size: 1rem;
+    cursor: pointer;
+    /* line-height: 1; */
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+nav a {
+    /* display: inline-block; */
+    /* Use bold font-weight by default */
+    /* font-weight: bold; */
+    /* Style your font-size */
+    /* font-size: 1.2rem; */
+    /* Now use opacity for visual effect instead of font-weight */
+    /* opacity: 0.75; */
+    transition: opacity 0.2s, transform 0.15s;
+}
+
+nav a:hover {
+    transform: scale(1.1);
+}
+
+body{
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    line-height: 1.6;
+    color: var(--text-main);
+    background-color: var(--background);
+    overflow-y: scroll;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+section {
+    max-width: 800px;
+    margin: auto;
+    padding: 1.5rem;
+    background: white;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+}
+
+footer{
+    text-align: center;
+    padding: 1rem;
+    background: var(--background);
+    color: var(--text-main);
+    margin-top: auto;
+}
+
+footer .socials-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+footer .socials {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+footer .socials img {
+    height: 1.5em;
+    vertical-align: middle;
+}
+
+.lang-dropdown {
+    width: 120px;
+    z-index: 2000;
+    background: var(--background);
+}
+
+.lang-dropbtn {
+    background: var(--background);
+    color: var(--foreground);
+    border: none;
+    width: 100%;
+    cursor: pointer;
+    font-size: 1em;
+    border-radius: 3px;
+}
+
+.lang-dropdown-content {
+    display: none;
+    position: absolute;
+    text-align: center;
+    background-color: var(--background);
+    min-width: 120px; /* Matches dropdown width */
+    font-size: 0.95em;
+    z-index: 9999;
+}
+
+.lang-dropdown-content a {
+    color: var(--foreground);
+    padding: 0.1em 0.1em;
+    text-decoration: none;
+    display: block;
+    font-size: 1em;
+}
+
+.lang-dropdown-content a:hover {
+    background-color: var(--card-hover);
+}
+
+.lang-dropdown:hover .lang-dropdown-content {
+    display: block;
+}
+
+.lang-dropdown:focus-within .lang-dropdown-content {
+    display: block;
+}
+
+.about-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+}
+
+.profile-pic {
+    width: 150px;
+    height: auto;
+    border-radius: 10px;
+}
+
+.education-container,
+.experience-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.education-card,
+.experience-card {
+    border-left: 4px solid #215CAF;
+    background: var(--card-bg);
+    padding-left: 10px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    /* box-shadow: 2px 2px 5px rgba(0,0,0,0.1); */
+    display: flex;          
+    flex-direction: column;
+}
+
+.education-card:hover,
+.experience-card:hover {
+    background: var(--card-hover);
+}
+
+.education-card-main,
+.experience-card-main {
+    display: flex;          /* side-by-side layout */
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+}
+
+.education-card-main-logo,
+.experience-card-main-logo {
+    padding: 0.5rem;
+}
+
+.education-card-main-logo img,
+.experience-card-main-logo img {
+    width: 80px;
+    height: auto;
+    vertical-align: middle;
+    align-self: center;
+}
+
+.education-card-details,
+.experience-card-details {
+    display: flex;          /* side-by-side layout */
+    flex-direction: column;
+    padding-left: 1rem;
+}
+
+/* Research */
+.publications-container {
+    display: flex;          /* side-by-side layout */
+    flex-direction: row;
+    flex-wrap: wrap;        /* Allow multi-line if needed */
+    justify-content: center; /* Center all cards horizontally */
+    align-items: center;     /* Center cards vertically if multi-row */
+    width: 100%;              /* Ensure the container uses full width */
+    gap: 1.5rem;
+}
+
+.publication-card {
+    width: 95%;
+    border-radius: 8px;
+    background: var(--card-bg);
+    overflow: hidden;
+    box-shadow: 0 2px 5px var(--shadow);
+    display: flex;
+    position: relative;
+    cursor: pointer;
+    opacity: 1;
+    transition: transform 0.2s ease;
+}
+
+.abstract-graphic {
+    position: relative;
+    height: auto;
+    display: block;  /* Removes inline spacing and makes images behave predictably in flex/grid */
+    margin: 10px;
+    background: white;
+    max-width: 350px;
+    min-width: 300px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 4px;
+    align-self: center;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+}
+
+.abstract-graphic img {
+    width: 100%;
+}
+
+.abstract-graphic .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.6); /* Semi-transparent dark background */
+    color: white;
+    font-size: 1.5rem;
+    opacity: 0;
+    pointer-events: none;
+    user-select: none;
+    /* Center the text within the full overlay */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    z-index: 500;
+    transition: opacity 0.2s ease;
+}
+
+.publication-card:hover {
+    transform: scale(1.01);
+}
+
+.publication-card:hover .abstract-graphic .overlay {
+    opacity: 1;
+}
+
+.publication-content {
+    padding: 1rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.publication-content p {
+    flex-grow: 1;
+}
+
+.publication-link {
+    text-align: right;
+}
+
+.publication-link a {
+    background: white;
+    color: black;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+.publication-tags-container {
+    display: flex;          /* side-by-side layout */
+    flex-direction: row;
+    flex-wrap: wrap;        /* Allow multi-line if needed */
+    justify-content: left; /* Center all cards horizontally */
+    align-items: center;     /* Center cards vertically if multi-row */
+    width: 100%;              /* Ensure the container uses full width */
+    gap: 0.8rem;
+}
+
+.publication-tag{
+    background: #215CAF;
+    color: white;
+    /* border: 2px solid var(--tag-border); */
+    width: fit-content;
+    padding: 0.3rem 0.9rem;
+    text-align: center;
+    font-weight: bold;
+    font-size: 0.9rem;
+    border-radius: 2rem;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+    z-index: 1000;
+}
+
+.publication-tag:hover {
+    transform: scale(1.05);
+}
+
+/* Contact */
+.contacts-container {
+    display: flex;          /* side-by-side layout */
+    flex-direction: row;
+    flex-wrap: wrap;        /* Allow multi-line if needed */
+    justify-content: center; /* Center all cards horizontally */
+    align-items: center;     /* Center cards vertically if multi-row */
+    width: 100%;              /* Ensure the container uses full width */
+    gap: 1.5rem;
+}
+
+.contact-card {
+    margin: 0 auto;
+    max-width: 550px;
+    align-items: center;
+    padding: 1rem;
+    border-radius: 8px;
+    background: var(--card-bg);
+    overflow: hidden;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: row;
+}
+
+.contact-card:hover {
+    transform: scale(1.02);
+}
+
+.contact-card img {
+    margin-right: 1.5rem;
+    max-width: 175px;
+    height: auto;
+    align-self: center;
+    border-radius: 10px;
+}
+
+.contact-content {
+    padding: 1.5rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.contact-content p {
+    flex-grow: 1;
+    margin-block-start: 0.5em;
+    margin-block-end: 0.5em;
+}
+
+@media (max-width: 800px) {
+    .abstract-graphic {
+        display: none;
+    }
+}
+
+@media (max-width: 600px) {
+    .about-container {
+        flex-direction: column;
+    }
+    .education-card-main-logo img,
+    .experience-card-main-logo img {
+        width: 60px;
+    }
+    .contact-card:hover {
+        transform: scale(1.01);
+    }
+    .contact-card img {
+        margin-right: 0.1rem;
+        max-width: 100px;
+    }
+    .contact-content {
+        margin-right: 0.1rem;
+        padding: 0.1rem;
+    }
+}
