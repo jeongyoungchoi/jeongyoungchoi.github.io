@@ -38,7 +38,7 @@ items.forEach(item => {
 }
 
 // Example usage with fetch:
-fetch('/assets/data/research/publications.json')
+fetch('/_data/publications.json')
     .then(response => response.json())
     .then(data => {
     renderPublications(data);

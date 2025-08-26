@@ -287,8 +287,8 @@ footer .socials img {
 
 /* Research */
 .publications-container {
-    display: flex;          /* side-by-side layout */
-    flex-direction: row;
+    display: flex;
+    flex-direction: column;
     flex-wrap: wrap;        /* Allow multi-line if needed */
     justify-content: center; /* Center all cards horizontally */
     align-items: center;     /* Center cards vertically if multi-row */
@@ -303,42 +303,39 @@ footer .socials img {
     overflow: hidden;
     box-shadow: 0 2px 5px var(--shadow);
     display: flex;
+    flex-direction: row;
     position: relative;
-    cursor: pointer;
     opacity: 1;
     transition: transform 0.2s ease;
 }
 
 .abstract-graphic {
+    max-width: 350px;
     position: relative;
     height: auto;
-    display: block;  /* Removes inline spacing and makes images behave predictably in flex/grid */
     margin: 10px;
     background: white;
-    max-width: 350px;
-    min-width: 300px;
-    width: 100%;
-    object-fit: cover;
     border-radius: 4px;
     align-self: center;
     box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+    overflow: hidden;
 }
 
 .abstract-graphic img {
     width: 100%;
 }
 
-.abstract-graphic .overlay {
+.overlay {
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0,0,0,0.6); /* Semi-transparent dark background */
+    /* background: transparent; */
     color: white;
     font-size: 1.5rem;
     opacity: 0;
-    pointer-events: none;
+    /* pointer-events: none; */
     user-select: none;
     /* Center the text within the full overlay */
     display: flex;
@@ -354,32 +351,16 @@ footer .socials img {
 }
 
 .publication-card:hover .abstract-graphic .overlay {
+    background: rgba(0,0,0,0.6); /* Semi-transparent dark background */
     opacity: 1;
 }
 
 .publication-content {
     padding: 1rem;
-    flex-grow: 1;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-}
-
-.publication-content p {
-    flex-grow: 1;
-}
-
-.publication-link {
-    text-align: right;
-}
-
-.publication-link a {
-    background: white;
-    color: black;
-    padding: 0.5rem 1rem;
-    text-decoration: none;
-    border-radius: 4px;
-    font-size: 0.9rem;
+    overflow-wrap: break-word;
 }
 
 .publication-tags-container {
@@ -407,6 +388,26 @@ footer .socials img {
 }
 
 .publication-tag:hover {
+    transform: scale(1.05);
+}
+
+.orcid-link {
+    position: relative;
+    margin: 0px 2px 0px;
+    vertical-align: middle;
+    display: inline-flex;
+    align-items: center;
+    z-index: 2000;
+}
+
+.orcid-icon {
+    width: 1rem;
+    height: 1rem;
+    vertical-align: middle;
+    display: inline-block;
+}
+
+.orcid-icon:hover {
     transform: scale(1.05);
 }
 
