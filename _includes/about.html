@@ -28,18 +28,20 @@
         <li><a href="#skills">보유 기술</a></li>
     </ul>
 {% endif %}
-
-{% if page.lang == "en" %}
-    <h3 id="experience">Experience</h3>
-{% elsif page.lang == "kr" %}
-    <h3 id="experience">경력</h3>
-{% endif %}
-
-{% if page.lang == "en" %}
-    <h3 id="education">Education</h3>
-{% elsif page.lang == "kr" %}
-    <h3 id="education">학력</h3>
-{% endif %}
+<h3 id="experience">
+    {% if page.lang == "en" %}
+        Experience
+    {% elsif page.lang == "kr" %}
+        경력
+    {% endif %}
+</h3>
+<h3 id="education">
+    {% if page.lang == "en" %}
+        Education
+    {% elsif page.lang == "kr" %}
+        학력
+    {% endif %}
+</h3>
 <div class="education-container">
     {% for school in site.data.education %}
         {% if page.lang == "en" %}
