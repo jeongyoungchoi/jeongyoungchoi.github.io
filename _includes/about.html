@@ -1,0 +1,101 @@
+{% if page.lang == "en" %}
+    <h2>About me</h2>
+{% elsif page.lang == "kr" %}
+    <h2>소개</h2>
+{% endif %}
+<div class="about-container">
+    <img src="/assets/images/profile.jpg" alt="Description of the image" class="profile-pic">
+    <p>
+        Currently a Master's student at ETH Zurich at the department of Electrical Engineering and Information Technology (D-ITET).
+        My research focuses on studying the electrical properties of lead halide perovskite nanocrystals through computational chemistry.
+        In addition, I am also interested in applying machine learning methods in various disciplines.
+    </p>
+</div>
+</p>
+
+<!-- Table of Contents -->
+{% if page.lang == "en" %}
+    <h2>Contents</h2>
+    <ul>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#skills">Skills</a></li>
+    </ul>
+{% elsif page.lang == "kr" %}
+    <h2>Contents</h2>
+    <ul>
+        <li><a href="#experience">경력</a></li>
+        <li><a href="#education">학력</a></li>
+        <li><a href="#skills">보유 기술</a></li>
+    </ul>
+{% endif %}
+
+<!-- Sections -->
+{% if page.lang == "en" %}
+    <h3 id="experience">Experience</h3>
+{% elsif page.lang == "kr" %}
+    <h3 id="experience">경력</h3>
+{% endif %}
+
+{% if page.lang == "en" %}
+    <h3 id="education">Education</h3>
+{% elsif page.lang == "kr" %}
+    <h3 id="education">학력</h3>
+{% endif %}
+<div class="education-container">
+    {% for school in site.data.education %}
+        {% if page.lang == "en" %}
+            {%- assign info = site.data.education_en[school.id] -%}
+        {% elsif page.lang == "kr" %}
+            {%- assign info = site.data.education_kr[school.id] -%}
+        {% endif %}
+        <div class="education-card">
+            <div class="education-card-main">
+                <div class="education-card-main-logo">
+                    <img src="/assets/images/icons/{{school.image}}" alt="{{info.name}}"/>
+                </div>
+                <p><b>{{info.name}}</b><br>
+                    {{school.start_year}} - {{school.end_year}}<br>
+                    {{info.degree}}
+                    {{info.field}}</p>
+            </div>
+            <div class="education-card-details">
+                {% if info.details %}
+                    <p>{{info.details}}</p>
+                {% endif %}
+                {% if info.thesis %}
+                    {% if page.lang == "en" %}
+                        <p>Thesis: {{info.thesis}}</p>
+                    {% elsif page.lang == "kr" %}
+                        <p>졸업 논문: {{info.thesis}}</p>
+                    {% endif %}
+                {% endif %}
+            </div>
+        </div>
+    {% endfor %}
+</div>
+
+{% if page.lang == "en" %}
+    <h3 id="skills">Skills</h3>
+    <p>Programming Languages</p>
+{% elsif page.lang == "kr" %}
+    <h3 id="skills">보유 기술</h3>
+    <p>프로그래밍 언어</p>
+{% endif %}
+<div class="publication-tags-container">
+    <div class="publication-tag">Python</div>
+    <div class="publication-tag">C</div>
+    <div class="publication-tag">MATLAB</div>
+    <div class="publication-tag">VHDL</div>
+</div>
+{% if page.lang == "en" %}
+    <p>Misc.</p>
+{% elsif page.lang == "kr" %}
+    <p>기타</p>
+{% endif %}
+<div class="publication-tags-container">
+    <div class="publication-tag">DFT</div>
+    <div class="publication-tag">AIMD</div>
+    <div class="publication-tag">FEM</div>
+    <div class="publication-tag">ML</div>
+</div>

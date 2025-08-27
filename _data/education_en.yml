@@ -1,0 +1,14 @@
+"ethz":
+  name: "ETH Zürich"
+  degree: "MSc."
+  field: "Electrical Engineering and Information Technology"
+  thesis: "Single shot optical pump electron-diffraction probe measurements on perovskite nanocrystals"
+"utwente":
+  name: "University of Twente"
+  degree: "BSc."
+  field: "Electrical Engineering"
+  thesis: <a href="research.html#research-item-1">Machine Learning Approaches in Extending the Capabilities of a Thermal Anemometer for Horticultural Applications (Published)</a>
+"hshs":
+  name: "Hansung Science High School"
+  degree: "High School Diploma"
+  details: "R&E (Research and Education): A study on the physical properties of WS2 using Atomic Force Microscopy (AFM) and Raman spectroscopy"
