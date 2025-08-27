@@ -8,7 +8,6 @@
                 {%- endcapture -%}
                 <a href="/en{{ subpage }}">English</a>
                 <a href="/kr{{ subpage }}">한국어</a>
-                <!-- Add more <a> for other languages as needed -->
             </div>
         </div>
         <button id="mode-toggle" aria-label="Toggle dark/light mode">🌙</button>
@@ -16,16 +15,13 @@
     
     <h1><a href="index" aria-label="Jeong Young Choi">Jeong Young Choi</a></h1>
     
-    <!-- Your main nav links here -->
     <nav>
         {% if page.lang == "en" %}
-            <!-- <a href="/en/index">Home</a> -->
             <a href="/en/about">About</a>
             <a href="/en/projects">Projects</a>
             <a href="/en/research">Research</a>
             <a href="/en/contact">Contact</a>
         {% elsif page.lang == "kr" %}
-            <!-- <a href="/kr/index">홈</a> -->
             <a href="/kr/about">소개</a>
             <a href="/kr/projects">프로젝트</a>
             <a href="/kr/research">연구</a>
