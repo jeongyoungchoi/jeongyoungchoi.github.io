@@ -1,0 +1,35 @@
+<div class="education-container">
+    {% for school in site.data.education %}
+        {% if page.lang == "en" %}
+            {%- assign info = site.data.education_en[school.id] -%}
+        {% elsif page.lang == "kr" %}
+            {%- assign info = site.data.education_kr[school.id] -%}
+        {% endif %}
+        <div class="education-card">
+            <div class="education-card-main">
+                <div class="education-card-main-logo">
+                    <img src="/assets/images/icons/{{school.image}}" alt="{{info.name}}"/>
+                </div>
+                <p><b>{{info.name}}</b><br>
+                    {{school.start_year}} - {{school.end_year}}<br>
+                    {{info.degree}}
+                    {{info.field}}</p>
+            </div>
+            <div class="education-card-details">
+                {% if info.details %}
+                    <p>{{info.details}}</p>
+                {% endif %}
+                {% if info.thesis %}
+                    <p>
+                        {% if page.lang == "en" %}
+                            Thesis:
+                        {% elsif page.lang == "kr" %}
+                            졸업 논문:
+                        {% endif %}
+                        {{info.thesis}}
+                    </p>
+                {% endif %}
+            </div>
+        </div>
+    {% endfor %}
+</div>
