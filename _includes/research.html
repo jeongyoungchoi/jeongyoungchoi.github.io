@@ -1,9 +1,12 @@
 <!-- Search box -->
 <!-- <input type="text" id="search" placeholder="Search publications..." class="border p-2 w-full mb-4"> -->
 <div id="publications-list" class="publications-container">
-{% for item in site.data.publications %}
+{% for item in site.data.research %}
     <div id="research-item-{{item.index}}" class="publication-card">
-        <a href="{{item.url}}" target="_blank" rel="noopener" class="overlay"></a>
+        {%- if item.url -%}
+            <a href="{{item.url}}" target="_blank" rel="noopener" class="overlay"></a>
+        {%- endif -%}
+        {%- if item.type == "Journal" -%}
         <div class="abstract-graphic">
             <img src="/assets/data/research/images/publication-{{item.index}}.png" alt="Publication {{item.index}} Thumbnail">
             <div class="overlay">
@@ -14,6 +17,7 @@
                 {%- endif -%}
             </div>
         </div>
+        {%- endif -%}
         <div class="publication-content">
             <h3 id="publication-title">{{item.title}}</h3>
             <p>
@@ -24,15 +28,19 @@
                     {%- else -%}
                         {{author.name}}
                     {%- endif -%}
-                    {%- if author.orcid -%}
-                        <a href="https://orcid.org/{{author.orcid}}" target="_blank" rel="noopener" class="orcid-link">
-                            <img src="/assets/images/icons/ORCID-iD_icon-vector.svg" alt="ORCID logo" class="orcid-icon"/>
-                        </a>
+                    {%- if item.type == "Journal" -%}
+                        {%- if author.orcid -%}
+                            <a href="https://orcid.org/{{author.orcid}}" target="_blank" rel="noopener" class="orcid-link">
+                                <img src="/assets/images/icons/ORCID-iD_icon-vector.svg" alt="ORCID logo" class="orcid-icon"/>
+                            </a>
+                        {%- endif -%}
                     {%- endif -%}
                     {%- unless forloop.last -%}, {% endunless -%}
                 {% endfor %}
             </p>
+            {%- if item.type == "Journal" -%}
             <p><em>{{item.journal}}</em>, vol. {{item.volume}}: no. {{item.number}}, pp. {{item.pages}}, {{item.publisher}}, {{item.year}}.</p>
+            {%- endif -%}
             <div class="publication-tags-container">
                 {% for type in item.type %}
                     <div class="publication-tag">{{type}}</div>
