@@ -1,0 +1,20 @@
+<div class="experience-container">
+    {% for entry in site.data.experience %}
+        {%- assign company = site.data.schools[entry.company_id] -%}
+        <div class="experience-card">
+            <div class="experience-card-main">
+                <div class="experience-card-main-logo">
+                    <img src="/assets/images/icons/{{company.image}}"/>
+                </div>
+                <p><b>{{company.name[page.lang]}}</b><br>
+                    {{entry.start_year}} - {{entry.end_year}}<br>
+                    {{entry.position[page.lang]}}</p>
+            </div>
+            <div class="experience-card-details">
+                {% if entry.details %}
+                    {{entry.details[page.lang]}}
+                {% endif %}
+            </div>
+        </div>
+    {% endfor %}
+</div>

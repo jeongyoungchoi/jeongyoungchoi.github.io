@@ -1,0 +1,23 @@
+{
+  "ethz": {
+    "name": {
+      "en": "ETH Zürich",
+      "kr": "취리히 연방 공과대학교"
+    },
+    "image": "ethz_logo.jpg"
+  },
+  "utwente": {
+    "name": {
+      "en": "University of Twente",
+      "kr": "트벤테 대학교"
+    },
+    "image": "utwente_logo.jpg"
+  },
+  "hshs": {
+    "name": {
+      "en": "Hansung Science High School",
+      "kr": "한성과학고등학교"
+    },
+    "image": "hshs_logo.webp"
+  }
+}

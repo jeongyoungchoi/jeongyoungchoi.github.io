@@ -1,32 +1,28 @@
 <div class="education-container">
-    {% for school in site.data.education %}
-        {% if page.lang == "en" %}
-            {%- assign info = site.data.education_en[school.id] -%}
-        {% elsif page.lang == "kr" %}
-            {%- assign info = site.data.education_kr[school.id] -%}
-        {% endif %}
+    {% for entry in site.data.education %}
+        {%- assign school = site.data.schools[entry.school_id] -%}
         <div class="education-card">
             <div class="education-card-main">
                 <div class="education-card-main-logo">
-                    <img src="/assets/images/icons/{{school.image}}" alt="{{info.name}}"/>
+                    <img src="/assets/images/icons/{{school.image}}"/>
                 </div>
-                <p><b>{{info.name}}</b><br>
-                    {{school.start_year}} - {{school.end_year}}<br>
-                    {{info.degree}}
-                    {{info.field}}</p>
+                <p><b>{{school.name[page.lang]}}</b><br>
+                    {{entry.start_year}} - {{entry.end_year}}<br>
+                    {{entry.degree[page.lang]}}
+                    {{entry.field[page.lang]}}</p>
             </div>
             <div class="education-card-details">
-                {% if info.details %}
-                    <p>{{info.details}}</p>
+                {% if entry.details %}
+                    <p>{{entry.details[page.lang]}}</p>
                 {% endif %}
-                {% if info.thesis %}
+                {% if entry.thesis %}
                     <p>
                         {% if page.lang == "en" %}
                             Thesis:
                         {% elsif page.lang == "kr" %}
                             졸업 논문:
                         {% endif %}
-                        {{info.thesis}}
+                        {{entry.thesis}}
                     </p>
                 {% endif %}
             </div>
