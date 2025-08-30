@@ -7,11 +7,11 @@
     "end_month": 8,
     "position":{
       "en": "Student Assistant",
-      "kr": "교육 조교"
+      "ko": "교육 조교"
     },
     "details":{
         "en":"<p>I have assisted students in tutorial, lab and project sessions in the courses listed below.</p>[Electrical Engineering]<ul><li>Circuit Analysis 1,2 | Low Frequency Electronics | High Frequency Electronics</li><li>Electrostatics | Magnetostatics | Electrodynamics</li><li>Computer Architecture and Organisation</li><li>Control Engineering | Engineering System Dynamics</li><li>Communication Systems</li></ul>Project(s):<ul><li>Sensors & Actuators Project</li><li>Power Electronics Project</li><li>Electronics Project</li><li>Digital Hardware</li><li>Project Systems & Control</li><li>Communication Systems</li></ul>[Applied Mathematics]<ul><li>Calculus 1,2 | Vector Calculus</li><li>Linear Algebra</li><li>Probability Theory</li></ul><p>* Voted as the best TA of 2022-2023 academic year</p>",
-        "kr":"<p>저는 이하 나열된 과목들의 교육조교로 (연습 및 실험조교) 근무했습니다.</p>[전기전자공학부]<ul><li>회로이론 (및 실험) | 전자 회로 (및 실험)</li><li>전자기학</li><li>컴퓨터구조</li><li>제어공학 | 시스템동역학</li><li>통신시스템</li></ul>프로젝트:<ul><li>센서 및 액추에이터 프로젝트</li><li>전력전자공학 프로젝트</li><li>전자 회로 프로젝트</li><li>디지털 하드웨어</li><li>시스템 및 제어 프로젝트</li><li>통신시스템</li></ul>[응용수학부]<ul><li>미적분학</li><li>선형대수학</li><li>확률과 통계</li></ul><p>* 2022-2023 학년도 최고의 TA로 선정됨</p>"
+        "ko":"<p>저는 이하 나열된 과목들의 교육조교로 (연습 및 실험조교) 근무했습니다.</p>[전기전자공학부]<ul><li>회로이론 (및 실험) | 전자 회로 (및 실험)</li><li>전자기학</li><li>컴퓨터구조</li><li>제어공학 | 시스템동역학</li><li>통신시스템</li></ul>프로젝트:<ul><li>센서 및 액추에이터 프로젝트</li><li>전력전자공학 프로젝트</li><li>전자 회로 프로젝트</li><li>디지털 하드웨어</li><li>시스템 및 제어 프로젝트</li><li>통신시스템</li></ul>[응용수학부]<ul><li>미적분학</li><li>선형대수학</li><li>확률과 통계</li></ul><p>* 2022-2023 학년도 최고의 TA로 선정됨</p>"
     }
   }
 ]

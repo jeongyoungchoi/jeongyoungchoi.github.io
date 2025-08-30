@@ -7,11 +7,11 @@
     "end_month": 8,
     "degree":{
       "en": "MSc.",
-      "kr": "이학석사 (MSc.)"
+      "ko": "이학석사 (MSc.)"
     },
     "field":{
       "en": "Electrical Engineering and Information Technology",
-      "kr": "전기 공학 및 정보 기술"
+      "ko": "전기 공학 및 정보 기술"
     },
     "thesis": "Single Shot Optical Pump Electron-Diffraction Probe Measurements on Perovskite Nanocrystals"
   },
@@ -23,11 +23,11 @@
     "end_month": 8,
     "degree":{
       "en": "BSc.",
-      "kr": "이학사 (BSc.)"
+      "ko": "이학사 (BSc.)"
     },
     "field":{
       "en": "Electrical Engineering",
-      "kr": "전기 공학"
+      "ko": "전기 공학"
     },
     "thesis": "Machine Learning Approaches in Extending the Capabilities of a Thermal Anemometer for Horticultural Applications (Published)"
   },
@@ -39,11 +39,11 @@
     "end_month": 2,
     "degree":{
       "en": "High School Diploma",
-      "kr": null
+      "ko": null
     },
     "details": {
       "en": "R&E (Research and Education): A study on the physical properties of WS2 using Atomic Force Microscopy (AFM) and Raman spectroscopy",
-      "kr": "R&E: 원자힘 현미경과 라만 분광법을 이용한 WS2의 물리적 특성 연구"
+      "ko": "R&E: 원자힘 현미경과 라만 분광법을 이용한 WS2의 물리적 특성 연구"
     }
   }
 ]
