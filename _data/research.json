@@ -5,6 +5,7 @@
         "authors": ["Jeong Young Choi"],
         "year": 2025,
         "type": "Dissertation",
+        "detail": "Master's Thesis, ETH Zürich",
         "keywords": ["Perovskite","UED","PDF"]
     },
     {
@@ -20,6 +21,7 @@
         "pages": "1-4",
         "keywords": ["ML"],
         "url": "https://doi.org/10.1109/LSENS.2024.3418193",
+        "pdf": "https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=10569028",
         "featured": true
     },
     {
@@ -28,6 +30,7 @@
         "authors": ["Jeong Young Choi"],
         "year": 2023,
         "type": "Dissertation",
+        "detail": "Bachelor's Thesis, University of Twente",
         "keywords": ["ML"],
         "url": "https://essay.utwente.nl/96207"
     }
