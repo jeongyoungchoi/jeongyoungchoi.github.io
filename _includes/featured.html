@@ -5,9 +5,9 @@
             {%- if item.url -%}
                 <a href="{{item.url}}" target="_blank" rel="noopener" class="overlay"></a>
             {%- endif -%}
-            {%- if item.type == "Journal" -%}
+            {%- if item.thumbnail -%}
             <div class="abstract-graphic">
-                <img src="/assets/data/research/images/publication-{{item.index}}.png" alt="Publication {{item.index}} Thumbnail">
+                <img src="{{item.thumbnail}}" alt="Publication {{item.index}} Thumbnail">
                 <div class="overlay">
                     {%- if page.lang == "en" -%}
                         Read paper

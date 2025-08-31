@@ -4,12 +4,12 @@
         "title": "Single Shot Optical Pump Electron-Diffraction Probe Measurements on Perovskite Nanocrystals",
         "authors": ["Jeong Young Choi"],
         "year": 2025,
+        "keywords": ["Perovskite","UED","PDF"],
         "type": "Dissertation",
         "detail": {
-            "en": "Master's Thesis, ETH Zürich",
-            "ko": "석사 졸업 논문 (취리히 연방 공과대학교)"
-        },
-        "keywords": ["Perovskite","UED","PDF"]
+            "en": "Master's Thesis, <em>ETH Zürich</em>, 2025.",
+            "ko": "석사 논문, 취리히 연방 공과대학교, 2025."
+        }
     },
     {
         "index": 1,
@@ -25,6 +25,7 @@
         "keywords": ["ML"],
         "url": "https://doi.org/10.1109/LSENS.2024.3418193",
         "pdf": "https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=10569028",
+        "thumbnail": "/assets/data/research/images/publication-1.png",
         "featured": true
     },
     {
@@ -32,12 +33,13 @@
         "title": "Machine Learning Approaches in Extending the Capabilities of a Thermal Anemometer for Horticultural Applications",
         "authors": ["Jeong Young Choi"],
         "year": 2023,
+        "keywords": ["ML"],
+        "url": "https://essay.utwente.nl/96207",
         "type": "Dissertation",
         "detail": {
-            "en": "Bachelor's Thesis, University of Twente",
-            "ko": "학사 졸업 논문 (트벤테 대학교)"
+            "en": "Bachelor's Thesis, <em>University of Twente</em>, 2023.",
+            "ko": "학사 논문, 트벤테 대학교, 2023."
         },
-        "keywords": ["ML"],
-        "url": "https://essay.utwente.nl/96207"
+        "thumbnail": "/assets/data/research/images/bsc_thesis.png"
     }
 ]
