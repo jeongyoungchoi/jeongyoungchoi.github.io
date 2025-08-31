@@ -39,7 +39,9 @@
                 {% endfor %}
             </p>
             {%- if item.type == "Journal" -%}
-            <p><em>{{item.journal}}</em>, vol. {{item.volume}}: no. {{item.number}}, pp. {{item.pages}}, {{item.publisher}}, {{item.year}}.</p>
+                <p><em>{{item.journal}}</em>, vol. {{item.volume}}: no. {{item.number}}, pp. {{item.pages}}, {{item.publisher}}, {{item.year}}.</p>
+            {%- elsif item.type == "Dissertation" -%}
+                <p>{{item.detail[page.lang]}}</p>
             {%- endif -%}
             <div class="publication-tags-container">
                 {% for type in item.type %}

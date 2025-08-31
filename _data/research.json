@@ -5,7 +5,10 @@
         "authors": ["Jeong Young Choi"],
         "year": 2025,
         "type": "Dissertation",
-        "detail": "Master's Thesis, ETH Zürich",
+        "detail": {
+            "en": "Master's Thesis, ETH Zürich",
+            "ko": "석사 졸업 논문 (취리히 연방 공과대학교)"
+        },
         "keywords": ["Perovskite","UED","PDF"]
     },
     {
@@ -30,7 +33,10 @@
         "authors": ["Jeong Young Choi"],
         "year": 2023,
         "type": "Dissertation",
-        "detail": "Bachelor's Thesis, University of Twente",
+        "detail": {
+            "en": "Bachelor's Thesis, University of Twente",
+            "ko": "학사 졸업 논문 (트벤테 대학교)"
+        },
         "keywords": ["ML"],
         "url": "https://essay.utwente.nl/96207"
     }
