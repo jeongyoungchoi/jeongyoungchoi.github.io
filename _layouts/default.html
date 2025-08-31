@@ -3,8 +3,12 @@
     <head>
         <meta charset="utf-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>{{ site.title }} | {{ page.title }}</title>
-
+        {% if page.lang == "en" %}
+            <title>{{ site.title }} | {{ page.title }}</title>
+        {% elsif page.lang == "ko" %}
+            <title>최정영 | {{ page.title }}</title>
+        {% endif %}
+        
         {% assign key = page.ref %}
         {% assign pages = site.pages | where: "ref", page.ref | sort: 'lang' %}
 
