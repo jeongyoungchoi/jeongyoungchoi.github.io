@@ -392,6 +392,20 @@ footer .socials img {
     transform: scale(1.05);
 }
 
+.download-pdf {
+    margin-left: auto;
+    height: 32px;
+    z-index: 1000;
+}
+
+.download-pdf:hover {
+    transform: scale(1.05);
+}
+
+.download-pdf img {
+    height: 100%;
+}
+
 .orcid-link {
     position: relative;
     margin: 0px 2px 0px;

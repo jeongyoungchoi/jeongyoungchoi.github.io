@@ -45,6 +45,11 @@
                     {% for keyword in item.keywords %}
                         <div class="publication-tag">{{keyword}}</div>
                     {% endfor %}
+                    {%- if item.pdf -%}
+                        <a class="download-pdf" href="{{item.pdf}}" download="{{item.title}}.pdf" target="_blank">
+                            <img src="/assets/images/icons/PDF_icon.svg" alt="PDF logo"/>
+                        </a>
+                    {%- endif -%}
                 </div>
             </div>
         </div>
