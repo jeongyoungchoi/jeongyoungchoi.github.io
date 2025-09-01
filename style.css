@@ -325,7 +325,7 @@ footer .socials img {
     width: 100%;
 }
 
-.overlay {
+[class*="overlay-"] {
     position: absolute;
     top: 0;
     left: 0;
@@ -350,18 +350,19 @@ footer .socials img {
     transform: scale(1.01);
 }
 
-.publication-card:hover .abstract-graphic .overlay {
-    background: rgba(0,0,0,0.6); /* Semi-transparent dark background */
-    opacity: 1;
-    z-index: 400;
-}
-
 .publication-content {
     padding: 1rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     overflow-wrap: break-word;
+}
+
+.publication-card:has(h3:hover) .abstract-graphic .overlay-read-paper,
+.publication-card:has(.download-pdf:hover) .abstract-graphic .overlay-download-paper {
+    background: rgba(0,0,0,0.6);
+    opacity: 1;
+    z-index: 700;
 }
 
 .publication-tags-container {

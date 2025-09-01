@@ -3,23 +3,33 @@
 <div id="publications-list" class="publications-container">
 {% for item in site.data.research %}
     <div id="research-item-{{item.index}}" class="publication-card">
-        {%- if item.url -%}
-            <a href="{{item.url}}" target="_blank" rel="noopener" class="overlay"></a>
-        {%- endif -%}
         {%- if item.thumbnail -%}
         <div class="abstract-graphic">
             <img src="{{item.thumbnail}}" alt="Publication {{item.index}} Thumbnail">
-            <div class="overlay">
+            <div class="overlay-read-paper">
                 {%- if page.lang == "en" -%}
                     Read paper
                 {%- elsif page.lang == "ko" -%}
                     논문 읽기
                 {%- endif -%}
             </div>
+            <div class="overlay-download-paper">
+                {%- if page.lang == "en" -%}
+                    Download paper
+                {%- elsif page.lang == "ko" -%}
+                    논문 받기
+                {%- endif -%}
+            </div>
         </div>
         {%- endif -%}
         <div class="publication-content">
-            <h3 id="publication-title">{{item.title}}</h3>
+            {%- if item.url -%}
+                <a href="{{item.url}}" target="_blank" rel="noopener">
+                    <h3 id="publication-title">{{item.title}}</h3>
+                </a>
+            {%- else -%}
+                <h3 id="publication-title">{{item.title}}</h3>
+            {%- endif -%}
             <p>
                 {% for auth_id in item.authors %}
                     {%- assign author = site.data.authors[auth_id] -%}
