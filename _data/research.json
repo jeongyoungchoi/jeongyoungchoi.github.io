@@ -34,11 +34,11 @@
         "authors": ["Jeong Young Choi"],
         "year": 2023,
         "keywords": ["ML"],
-        "url": "https://essay.utwente.nl/96207",
+        "url": " https://purl.utwente.nl/essays/96207",
         "type": "Dissertation",
         "detail": {
-            "en": "Bachelor's Thesis, <em>University of Twente</em>, 2023.",
-            "ko": "학사 논문, 트벤테 대학교, 2023."
+            "en": "Bachelor's Thesis, <em>University of Twente</em>, 2023. (Confidential until 07.07.2026)",
+            "ko": "학사 논문, 트벤테 대학교, 2023. (비공개 기한: 07.07.2026까지)"
         },
         "thumbnail": "/assets/data/research/images/bsc_thesis.png"
     }
