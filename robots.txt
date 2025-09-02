@@ -1,2 +1,5 @@
-User-agent: Googlebot-Image
+User-agent: *
 Disallow: /assets/images/
+Disallow: /assets/data/research/images/
+
+sitemap: https://jeongyoungchoi.github.io/sitemap.xml
