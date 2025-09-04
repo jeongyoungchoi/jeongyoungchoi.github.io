@@ -1,17 +1,5 @@
 [
     {
-        "index": 2,
-        "title": "Single Shot Optical Pump Electron-Diffraction Probe Measurements on Perovskite Nanocrystals",
-        "authors": ["Jeong Young Choi"],
-        "year": 2025,
-        "keywords": ["Perovskite","UED","PDF"],
-        "type": "Dissertation",
-        "detail": {
-            "en": "Master's Thesis, <em>ETH Zürich</em>, 2025.",
-            "ko": "석사 논문, 취리히 연방 공과대학교, 2025."
-        }
-    },
-    {
         "index": 1,
         "title": "A Machine Learning Enhanced MEMS Thermal Anemometer for Detection of Flow, Angle of Attack, and Relative Humidity",
         "authors": ["Thomas Leigh Hackett", "Jeong Young Choi", "Remco Sanders", "Tomas van den Berg", "Dennis Alveringh", "Jurriaan Schmitz"],
