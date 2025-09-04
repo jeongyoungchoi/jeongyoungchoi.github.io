@@ -9,22 +9,26 @@
             <title>최정영 | {{ page.title }}</title>
         {% endif %}
         
-        {% assign key = page.ref %}
         {% assign pages = site.pages | where: "ref", page.ref | sort: 'lang' %}
-
-        {% for page in pages %}
-            <link rel="alternate" hreflang="{{ page.lang }}" href="{{ site.url }}{{ page.url }}"/>
-        {% endfor %}
-        
-        {% assign default_post = site.pages | where: "ref", page.ref | where:"lang", "en" | first %}
-        {% if default_post %}
-            {% assign clean_url = default_post.url | remove_first: "/en" %}
-            {% if clean_url == "/" %}
-                <link rel="alternate" hreflang="x-default" href="{{ site.url }}{{ clean_url }}" />
+        {% if page.ref == "home" %}
+            {% if page.lang == "en" %}
+                <link rel="canonical" hreflang="{{ site.lang }}" href="{{ site.url }}"/>
             {% else %}
-                <link rel="alternate" hreflang="x-default" href="{{ site.url }}/en{{ clean_url }}" />
-            {% endif %}
-        {% endif %}
+                <link rel="canonical" hreflang="{{ page.lang }}" href="{{ site.url }}{{ page.url }}"/>
+            {% endif %}     
+            {% for page in pages %}
+                <link rel="alternate" hreflang="{{ page.lang }}" href="{{ site.url }}{{ page.url }}"/>
+            {% endfor %}
+            <link rel="alternate" hreflang="x-default" href="{{ site.url }}" />
+        {% else %}
+            <link rel="canonical" hreflang="{{ page.lang }}" href="{{ site.url }}{{ page.url }}"/>
+            {% for page in pages %}
+                <link rel="alternate" hreflang="{{ page.lang }}" href="{{ site.url }}{{ page.url }}"/>
+            {% endfor %}
+            {% assign rel_url = page.url | remove_first: "/en" | remove_first: "/ko" %}
+            <link rel="alternate" hreflang="x-default" href="{{ site.url }}/en{{ rel_url }}" />
+        {% endif %}        
+
         <meta name="description" content="{{ page.description | default: site.description }}">
         <link rel="stylesheet" href="/style.css">
         <meta name="google-site-verification" content="kT0pXqAEguHOsSJDAuTw66EC5Y8sfND_o91W_xK6qJ4"/>
