@@ -9,7 +9,7 @@
             <title>최정영 | {{ page.title }}</title>
         {% endif %}
         
-        {% assign pages = site.pages | where: "ref", page.ref | sort: 'lang' %}
+        <!-- {% assign pages = site.pages | where: "ref", page.ref | sort: 'lang' %}
         {% if page.ref == "home" %}
             {% if page.lang == "en" %}
                 <link rel="canonical" hreflang="{{ site.lang }}" href="{{ site.url }}"/>
@@ -27,7 +27,7 @@
             {% endfor %}
             {% assign rel_url = page.url | remove_first: "/en" | remove_first: "/ko" %}
             <link rel="alternate" hreflang="x-default" href="{{ site.url }}/en{{ rel_url }}" />
-        {% endif %}        
+        {% endif %}         -->
 
         <meta name="description" content="{{ page.description | default: site.description }}">
         <link rel="stylesheet" href="/style.css">
