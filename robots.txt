@@ -2,4 +2,7 @@ User-agent: *
 Disallow: /assets/images/
 Disallow: /assets/data/research/images/
 
+User-agent: Googlebot-Image
+Disallow: /
+
 sitemap: https://jeongyoungchoi.github.io/sitemap.xml
