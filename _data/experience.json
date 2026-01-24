@@ -1,5 +1,20 @@
 [
   {
+    "company_id": "ethz",
+    "start_year": 2025,
+    "start_month": 11,
+    "end_year": 2026,
+    "end_month": 2,
+    "position": {
+      "en": "Research Assistant",
+      "ko": "보조연구원"
+    },
+    "details": {
+      "en": "<p>Currently preparing for publications.</p>",
+      "ko": "<p>현재 논문 게재 준비 중입니다.</p>"
+    }
+  },
+  {
     "company_id": "utwente",
     "start_year": 2021,
     "start_month": 9,
