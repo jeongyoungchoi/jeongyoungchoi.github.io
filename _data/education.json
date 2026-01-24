@@ -2,9 +2,9 @@
   {
     "school_id": "ethz",
     "start_year": 2023,
-    "start_month": 9,
-    "end_year": 2025,
-    "end_month": 8,
+    "start_month": 11,
+    "end_year": 2026,
+    "end_month": 3,
     "degree":{
       "en": "MSc.",
       "ko": "이학석사 (MSc.)"
