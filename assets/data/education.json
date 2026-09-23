@@ -5,11 +5,11 @@
     "start_month": 11,
     "end_year": 2026,
     "end_month": 3,
-    "degree":{
+    "degree": {
       "en": "MSc.",
       "ko": "이학석사 (MSc.)"
     },
-    "field":{
+    "field": {
       "en": "Electrical Engineering and Information Technology",
       "ko": "전기 공학 및 정보 기술"
     },
@@ -21,11 +21,11 @@
     "start_month": 9,
     "end_year": 2023,
     "end_month": 8,
-    "degree":{
+    "degree": {
       "en": "BSc.",
       "ko": "이학사 (BSc.)"
     },
-    "field":{
+    "field": {
       "en": "Electrical Engineering",
       "ko": "전기 공학"
     },
@@ -37,7 +37,7 @@
     "start_month": 3,
     "end_year": 2018,
     "end_month": 2,
-    "degree":{
+    "degree": {
       "en": "High School Diploma",
       "ko": null
     },

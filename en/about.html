@@ -1,42 +1,101 @@
----
-layout: default
-title: "About"
-ref: about
-description: "Learn more about Jeong Young Choi"
-lang: en
----
-<h2>About me</h2>
-<div class="about-container">
-    <img src="/assets/images/profile.jpg" alt="Description of the image" class="profile-pic">
-    <p>
-        Currently a Master's student at ETH Zurich at the department of Electrical Engineering and Information Technology (D-ITET).
-        My research focuses on studying the electrical properties of lead halide perovskite nanocrystals through computational chemistry.
-        In addition, I am also interested in applying machine learning methods in various disciplines.
-    </p>
-</div>
-<!-- Table of Contents -->
-<h2>Contents</h2>
-<ul>
-    <li><a href="#experience">Experience</a></li>
-    <li><a href="#education">Education</a></li>
-    <li><a href="#skills">Skills</a></li>
-</ul>
-<h3 id="experience">Experience</h3>
-{% include experience.html %}
-<h3 id="education">Education</h3>
-{% include education.html %}
-<h3 id="skills">Skills</h3>
-<p>Programming Languages</p>
-<div class="publication-tags-container">
-    <div class="publication-tag">Python</div>
-    <div class="publication-tag">C</div>
-    <div class="publication-tag">MATLAB</div>
-    <div class="publication-tag">VHDL</div>
-</div>
-<p>Misc.</p>
-<div class="publication-tags-container">
-    <div class="publication-tag">DFT</div>
-    <div class="publication-tag">AIMD</div>
-    <div class="publication-tag">FEM</div>
-    <div class="publication-tag">ML</div>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jeong Young Choi | About</title>
+    <meta name="description" content="Learn more about Jeong Young Choi">
+    <link rel="stylesheet" href="/style.css">
+    <meta name="google-site-verification" content="kT0pXqAEguHOsSJDAuTw66EC5Y8sfND_o91W_xK6qJ4"/>
+    <script>
+        (function () {
+            var savedTheme = localStorage.getItem('theme');
+            if (savedTheme) {
+                document.documentElement.classList.add(savedTheme);
+            } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                document.documentElement.classList.add('dark-mode');
+            } else {
+                document.documentElement.classList.add('light-mode');
+            }
+        })();
+    </script>
+</head>
+<body>
+    <header>
+        <div class="header-controls">
+            <div class="lang-dropdown">
+                <button class="lang-dropbtn">Language ▼</button>
+                <div class="lang-dropdown-content">
+                    <a href="/en/about.html">English</a>
+                    <a href="/ko/about.html">한국어</a>
+                </div>
+            </div>
+            <button id="mode-toggle" aria-label="Toggle dark/light mode">🌙</button>
+        </div>
+
+        <h1><a href="/en/" aria-label="Jeong Young Choi">Jeong Young Choi</a></h1>
+
+        <nav>
+            <a href="/en/about.html">About</a>
+            <a href="/en/projects.html">Projects</a>
+            <a href="/en/research.html">Research</a>
+            <a href="/en/contact.html">Contact</a>
+        </nav>
+    </header>
+    <main>
+        <h2>About me</h2>
+        <div class="about-container">
+            <img src="/assets/images/profile.jpg" alt="Description of the image" class="profile-pic">
+            <p>
+                Currently a Master's student at ETH Zurich at the department of Electrical Engineering and Information Technology (D-ITET).
+                My research focuses on studying the electrical properties of lead halide perovskite nanocrystals through computational chemistry.
+                In addition, I am also interested in applying machine learning methods in various disciplines.
+            </p>
+        </div>
+        <h2>Contents</h2>
+        <ul>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#skills">Skills</a></li>
+        </ul>
+        <h3 id="experience">Experience</h3>
+        <div class="experience-container" id="experience-list"></div>
+        <h3 id="education">Education</h3>
+        <div class="education-container" id="education-list"></div>
+        <h3 id="skills">Skills</h3>
+        <p>Programming Languages</p>
+        <div class="publication-tags-container">
+            <div class="publication-tag">Python</div>
+            <div class="publication-tag">C</div>
+            <div class="publication-tag">MATLAB</div>
+            <div class="publication-tag">VHDL</div>
+        </div>
+        <p>Misc.</p>
+        <div class="publication-tags-container">
+            <div class="publication-tag">DFT</div>
+            <div class="publication-tag">AIMD</div>
+            <div class="publication-tag">FEM</div>
+            <div class="publication-tag">ML</div>
+        </div>
+    </main>
+    <footer>
+        <div class="socials-container">
+            <div class="socials">
+                <a href="https://linkedin.com/in/jeongyoungchoi" target="_blank" rel="noopener" aria-label="LinkedIn">
+                    <img class="light-icon" src="/assets/images/icons/LI-In-Bug.png" alt="LinkedIn logo light mode"/>
+                    <img class="dark-icon" src="/assets/images/icons/InBug-White.png" alt="LinkedIn logo dark mode"/>
+                </a>
+            </div>
+            <div class="socials">
+                <a href="https://scholar.google.com/citations?user=NcIF9NEAAAAJ&hl=en" target="_blank" rel="noopener" aria-label="Google Scholar">
+                    <img class="light-icon" src="/assets/images/icons/Google_Scholar_logo.svg" alt="Google Scholar logo light mode"/>
+                    <img class="dark-icon" src="/assets/images/icons/Google_Scholar_logo.svg" alt="Google Scholar logo dark mode"/>
+                </a>
+            </div>
+        </div>
+        <p>&copy; 2026 Jeong Young Choi</p>
+    </footer>
+    <script src="/assets/js/main.js" defer></script>
+    <script src="/assets/js/render.js" defer></script>
+</body>
+</html>

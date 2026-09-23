@@ -1,9 +1,69 @@
----
-layout: default
-title: "Research"
-ref: research
-description: "Learn more about Jeong Young Choi's current research and recent publications"
-lang: en
----
-<h2>Research</h2>
-{% include research.html %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jeong Young Choi | Research</title>
+    <meta name="description" content="Learn more about Jeong Young Choi's current research and recent publications">
+    <link rel="stylesheet" href="/style.css">
+    <meta name="google-site-verification" content="kT0pXqAEguHOsSJDAuTw66EC5Y8sfND_o91W_xK6qJ4"/>
+    <script>
+        (function () {
+            var savedTheme = localStorage.getItem('theme');
+            if (savedTheme) {
+                document.documentElement.classList.add(savedTheme);
+            } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                document.documentElement.classList.add('dark-mode');
+            } else {
+                document.documentElement.classList.add('light-mode');
+            }
+        })();
+    </script>
+</head>
+<body>
+    <header>
+        <div class="header-controls">
+            <div class="lang-dropdown">
+                <button class="lang-dropbtn">Language ▼</button>
+                <div class="lang-dropdown-content">
+                    <a href="/en/research.html">English</a>
+                    <a href="/ko/research.html">한국어</a>
+                </div>
+            </div>
+            <button id="mode-toggle" aria-label="Toggle dark/light mode">🌙</button>
+        </div>
+
+        <h1><a href="/en/" aria-label="Jeong Young Choi">Jeong Young Choi</a></h1>
+
+        <nav>
+            <a href="/en/about.html">About</a>
+            <a href="/en/projects.html">Projects</a>
+            <a href="/en/research.html">Research</a>
+            <a href="/en/contact.html">Contact</a>
+        </nav>
+    </header>
+    <main>
+        <h2>Research</h2>
+        <div id="publications-list" class="publications-container"></div>
+    </main>
+    <footer>
+        <div class="socials-container">
+            <div class="socials">
+                <a href="https://linkedin.com/in/jeongyoungchoi" target="_blank" rel="noopener" aria-label="LinkedIn">
+                    <img class="light-icon" src="/assets/images/icons/LI-In-Bug.png" alt="LinkedIn logo light mode"/>
+                    <img class="dark-icon" src="/assets/images/icons/InBug-White.png" alt="LinkedIn logo dark mode"/>
+                </a>
+            </div>
+            <div class="socials">
+                <a href="https://scholar.google.com/citations?user=NcIF9NEAAAAJ&hl=en" target="_blank" rel="noopener" aria-label="Google Scholar">
+                    <img class="light-icon" src="/assets/images/icons/Google_Scholar_logo.svg" alt="Google Scholar logo light mode"/>
+                    <img class="dark-icon" src="/assets/images/icons/Google_Scholar_logo.svg" alt="Google Scholar logo dark mode"/>
+                </a>
+            </div>
+        </div>
+        <p>&copy; 2026 Jeong Young Choi</p>
+    </footer>
+    <script src="/assets/js/main.js" defer></script>
+    <script src="/assets/js/render.js" defer></script>
+</body>
+</html>
