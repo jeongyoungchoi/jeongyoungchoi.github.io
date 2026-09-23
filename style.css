@@ -196,13 +196,14 @@ header h1 a:hover {
 }
 
 #mode-toggle {
+    position: relative;
     border: none;
     background: transparent;
-    font-size: 1.1rem;
+    color: var(--text-main);
     line-height: 1;
     cursor: pointer;
-    width: 2rem;
-    height: 2rem;
+    width: 2.1rem;
+    height: 2.1rem;
     border-radius: 50%;
     display: inline-flex;
     align-items: center;
@@ -214,7 +215,35 @@ header h1 a:hover {
     background: var(--accent-soft);
     box-shadow: 0 0 0 6px var(--accent-soft);
 }
-#mode-toggle:active { transform: scale(0.85) rotate(-16deg); transition: transform 220ms var(--spring); }
+#mode-toggle:active { transform: scale(0.85); transition: transform 220ms var(--spring); }
+
+#mode-toggle svg {
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    transition: opacity 280ms var(--spring), transform 280ms var(--spring);
+}
+
+#mode-toggle .icon-moon {
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+}
+
+#mode-toggle .icon-sun {
+    opacity: 0;
+    transform: rotate(-90deg) scale(0.5);
+}
+
+.light-mode #mode-toggle .icon-sun {
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+    color: #e0a63e;
+}
+
+.light-mode #mode-toggle .icon-moon {
+    opacity: 0;
+    transform: rotate(90deg) scale(0.5);
+}
 
 nav {
     display: flex;
@@ -290,7 +319,8 @@ button:focus-visible {
     transition: background-color var(--fast), color var(--fast);
 }
 
-.lang-dropbtn:hover {
+.lang-dropbtn:hover,
+.lang-dropdown.open .lang-dropbtn {
     background: var(--accent-soft);
     color: var(--text-main);
 }
@@ -325,8 +355,7 @@ button:focus-visible {
     background-color: var(--card-hover);
 }
 
-.lang-dropdown:hover .lang-dropdown-content,
-.lang-dropdown:focus-within .lang-dropdown-content {
+.lang-dropdown.open .lang-dropdown-content {
     opacity: 1;
     transform: translateY(0);
     visibility: visible;

@@ -34,28 +34,50 @@ window.Reveal = (function () {
 
 document.addEventListener("DOMContentLoaded", function () {
     // --- Dark / light mode toggle ---
+    // The sun/moon icon swap is handled entirely by CSS off the .light-mode /
+    // .dark-mode class on <html>, so this just flips that class.
     var toggleBtn = document.getElementById("mode-toggle");
-
-    function updateIcon() {
-        if (!toggleBtn) return;
-        toggleBtn.textContent = document.documentElement.classList.contains("dark-mode") ? "🌙" : "☀️";
-    }
-
     if (toggleBtn) {
         toggleBtn.onclick = function () {
             var root = document.documentElement;
-            if (root.classList.contains("dark-mode")) {
-                root.classList.remove("dark-mode");
-                root.classList.add("light-mode");
-                localStorage.setItem("theme", "light-mode");
-            } else {
-                root.classList.remove("light-mode");
-                root.classList.add("dark-mode");
-                localStorage.setItem("theme", "dark-mode");
-            }
-            updateIcon();
+            var isDark = root.classList.contains("dark-mode");
+            root.classList.remove(isDark ? "dark-mode" : "light-mode");
+            root.classList.add(isDark ? "light-mode" : "dark-mode");
+            localStorage.setItem("theme", isDark ? "light-mode" : "dark-mode");
+            toggleBtn.setAttribute("aria-pressed", isDark ? "true" : "false");
         };
-        updateIcon();
+    }
+
+    // --- Language dropdown: opens only on click, closes on outside click,
+    // Escape, or picking a language. No hover/focus-within triggers. ---
+    var langDropdown = document.querySelector(".lang-dropdown");
+    var langBtn = langDropdown ? langDropdown.querySelector(".lang-dropbtn") : null;
+    if (langDropdown && langBtn) {
+        langBtn.setAttribute("aria-haspopup", "true");
+        langBtn.setAttribute("aria-expanded", "false");
+
+        var closeLangDropdown = function () {
+            langDropdown.classList.remove("open");
+            langBtn.setAttribute("aria-expanded", "false");
+        };
+
+        langBtn.addEventListener("click", function (event) {
+            event.stopPropagation();
+            var isOpen = langDropdown.classList.toggle("open");
+            langBtn.setAttribute("aria-expanded", isOpen ? "true" : "false");
+        });
+
+        document.addEventListener("click", function (event) {
+            if (!langDropdown.contains(event.target)) closeLangDropdown();
+        });
+
+        document.addEventListener("keydown", function (event) {
+            if (event.key === "Escape") closeLangDropdown();
+        });
+
+        langDropdown.querySelectorAll(".lang-dropdown-content a").forEach(function (link) {
+            link.addEventListener("click", closeLangDropdown);
+        });
     }
 
     // --- Sticky header shadow once the page scrolls ---
