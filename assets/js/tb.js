@@ -13,7 +13,8 @@
 // (e.g. #coin-cell, #electrochemistry-rt) while it fills the screen.
 (function () {
     var RIG_URL = "/assets/images/tb/coin_cell_rig.svg";
-    var MOBILE = 760;   // px; below this labels all sit on the right
+    var MOBILE = 760;   // px; below this labels all sit on the right, in one aligned column
+    var SMOOTH_MS = 110; // how long the animation trails the scroll (time constant); 0 = locked to scroll
 
     // Top-to-bottom order, matching ORDER in the generator.
     var LABELS = {
@@ -49,6 +50,9 @@
     var parts = [];     // one entry per component: { name, layers, a, e, y0, y1, r, label, line, dot }
     var maxR = 0;
     var ticking = false;
+    var shownProg = null;   // progress currently drawn; eases toward the scroll position
+    var lastTime = 0;
+    var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     var SVGNS = "http://www.w3.org/2000/svg";
 
     function clamp(x, lo, hi) { return Math.min(hi, Math.max(lo, x)); }
@@ -124,7 +128,7 @@
             });
         });
 
-        update();
+        requestUpdate();
     }
 
     function setHover(p, hover) {
@@ -176,31 +180,44 @@
             p.layers.forEach(function (g) { g.setAttribute("transform", tr); });
         });
 
-        // Labels appear one after another, top part first, once the parts have separated
-        parts.forEach(function (p, i) {
-            var on = prog > 0.40 + i * 0.035;
+        // Labels appear one after another, top part first, once the parts have separated.
+        // Phones: one left-aligned column right of the widest part. Desktop: alternate sides.
+        var gap = mobile ? 14 : 48;
+        var column = cx + maxR * s + gap;
+        var layout = parts.map(function (p, i) {
             var left = !mobile && i % 2 === 1;
             var ay = offY + (p.t + (p.y0 + p.y1) / 2 - top) * s;
             var ax = cx + (left ? -p.r : p.r) * s;
-            var gap = mobile ? 14 : 48;
-            var lx = left ? ax - gap : ax + gap;
+            var lx = mobile ? column : (left ? ax - gap : ax + gap);
+            return { left: left, ax: ax, ay: ay, lx: lx,
+                     maxW: Math.round(mobile ? W - lx - 8 : 260) };
+        });
+        // Write every label's width first, then read every size: one layout pass, not eight
+        parts.forEach(function (p, i) {
+            var L = layout[i];
+            p.label.classList.toggle("side-left", L.left);
+            if (p.maxW !== L.maxW) { p.maxW = L.maxW; p.label.style.maxWidth = L.maxW + "px"; p.size = null; }
+        });
+        parts.forEach(function (p) {
+            if (!p.size) p.size = [p.label.offsetWidth, p.label.offsetHeight];
+        });
+        parts.forEach(function (p, i) {
+            var L = layout[i];
+            var on = prog > 0.40 + i * 0.035;
+            var dx = L.ax + (L.left ? -4 : 4);
 
-            p.line.setAttribute("x1", (ax + (left ? -4 : 4)).toFixed(1));
-            p.line.setAttribute("y1", ay.toFixed(1));
-            p.line.setAttribute("x2", lx.toFixed(1));
-            p.line.setAttribute("y2", ay.toFixed(1));
-            p.dot.setAttribute("cx", (ax + (left ? -4 : 4)).toFixed(1));
-            p.dot.setAttribute("cy", ay.toFixed(1));
+            p.line.setAttribute("x1", dx.toFixed(1));
+            p.line.setAttribute("y1", L.ay.toFixed(1));
+            p.line.setAttribute("x2", L.lx.toFixed(1));
+            p.line.setAttribute("y2", L.ay.toFixed(1));
+            p.dot.setAttribute("cx", dx.toFixed(1));
+            p.dot.setAttribute("cy", L.ay.toFixed(1));
 
-            var el = p.label;
-            el.classList.toggle("side-left", left);
-            el.style.maxWidth = (left ? lx - 8 : W - lx - 8) + "px";
-            var w = el.offsetWidth, h = el.offsetHeight;
-            var x = left ? lx - w : lx;
-            el.style.transform = "translate(" + x.toFixed(1) + "px," + (ay - h / 2).toFixed(1) + "px)";
+            var x = L.left ? L.lx - p.size[0] : L.lx;
+            p.label.style.transform = "translate(" + x.toFixed(1) + "px," + (L.ay - p.size[1] / 2).toFixed(1) + "px)";
             if (p.on && !on) setHover(p, false);
             p.on = on;
-            el.classList.toggle("is-on", on);
+            p.label.classList.toggle("is-on", on);
             p.line.classList.toggle("is-on", on);
             p.dot.classList.toggle("is-on", on);
         });
@@ -212,9 +229,24 @@
         }
     }
 
-    function update() {
+    function update(now) {
         ticking = false;
-        if (rig) updateExplode(sectionProgress(section, stage));
+        if (rig) {
+            // Ease the drawn progress toward the scroll position so mouse-wheel
+            // steps glide instead of jumping; keep animating until it catches up
+            var target = sectionProgress(section, stage);
+            var dt = lastTime ? Math.min(now - lastTime, 100) : 0;
+            lastTime = now;
+            if (shownProg === null || reduceMotion || SMOOTH_MS <= 0) {
+                shownProg = target;
+            } else {
+                shownProg += (target - shownProg) * (1 - Math.exp(-dt / SMOOTH_MS));
+                if (Math.abs(target - shownProg) < 0.0001) shownProg = target;
+            }
+            updateExplode(shownProg);
+            if (shownProg !== target) requestUpdate();
+            else lastTime = 0;
+        }
         updateHash();
         SCENES.forEach(function (sc) { sc.update(sectionProgress(sc.el)); });
     }
@@ -228,7 +260,11 @@
 
     setHeaderVar();
     window.addEventListener("scroll", requestUpdate, { passive: true });
-    window.addEventListener("resize", function () { setHeaderVar(); requestUpdate(); });
+    window.addEventListener("resize", function () {
+        setHeaderVar();
+        parts.forEach(function (p) { p.size = null; });   // fonts change at the breakpoint
+        requestUpdate();
+    });
 
     fetch(RIG_URL)
         .then(function (res) {
