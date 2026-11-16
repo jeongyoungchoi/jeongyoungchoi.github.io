@@ -17,8 +17,48 @@
                 document.documentElement.classList.add('light-mode');
             }
         })();
+        // Simple password gate (not secure, just keeps the page out of casual view)
+        (function () {
+            var ok = false;
+            try { ok = sessionStorage.getItem('tb-unlocked') === '1'; } catch (e) {}
+            if (!ok) document.documentElement.classList.add('tb-locked');
+        })();
     </script>
     <style>
+        /* Password gate */
+        .tb-gate { display: none; }
+        html.tb-locked body > *:not(.tb-gate) { display: none !important; }
+        html.tb-locked .tb-gate {
+            display: flex;
+            min-height: 100svh;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+        }
+        .tb-gate form {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+            width: 100%;
+            max-width: 20rem;
+            padding: 1.6rem;
+            border-radius: var(--radius-md);
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            box-shadow: 0 6px 18px -10px var(--shadow);
+            text-align: center;
+        }
+        .tb-gate input, .tb-gate button {
+            font: inherit;
+            padding: 0.55rem 0.8rem;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--card-border);
+            background: transparent;
+            color: inherit;
+        }
+        .tb-gate button { cursor: pointer; border-color: var(--accent); color: var(--accent); }
+        .tb-gate .tb-gate-err { margin: 0; min-height: 1.2em; font-size: 0.85rem; color: var(--text-sub); }
+
         /* Page-specific styles for the hidden coin cell page */
         main.tb-main {
             max-width: 1200px;
@@ -150,6 +190,25 @@
     </style>
 </head>
 <body>
+    <div class="tb-gate">
+        <form id="tb-gate-form" autocomplete="off">
+            <label for="tb-gate-pw">비밀번호를 입력하세요</label>
+            <input type="password" id="tb-gate-pw" autofocus>
+            <button type="submit">확인</button>
+            <p class="tb-gate-err" id="tb-gate-err" aria-live="polite"></p>
+        </form>
+    </div>
+    <script>
+        document.getElementById('tb-gate-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+            if (document.getElementById('tb-gate-pw').value === 'iifa') {
+                try { sessionStorage.setItem('tb-unlocked', '1'); } catch (err) {}
+                location.reload();
+            } else {
+                document.getElementById('tb-gate-err').textContent = '비밀번호가 올바르지 않습니다.';
+            }
+        });
+    </script>
     <header>
         <div class="header-controls">
             <div class="lang-dropdown">
